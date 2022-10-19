@@ -9,5 +9,6 @@ namespace R5T.F0052
 	public partial interface IDirectoryNames : IValuesMarker
 	{
 		public string Code => "Code";
+		public string Properties => "Properties";
 	}
 }
