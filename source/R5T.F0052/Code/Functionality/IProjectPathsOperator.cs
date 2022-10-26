@@ -84,13 +84,61 @@ namespace R5T.F0052
 
 		public string GetPropertiesDirectoryPath(string projectFilePath)
 		{
-			var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
-
-			var codeDirectoryPath = Instances.PathOperator.GetDirectoryPath(
-				projectDirectoryPath,
+			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
+			
+			var propertiesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+				codeDirectoryPath,
 				Instances.DirectoryNames.Properties);
 
-			return codeDirectoryPath;
+			return propertiesDirectoryPath;
+		}
+
+		public string GetServicesDirectoryPath(string projectFilePath)
+        {
+			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
+
+			var servicesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+				codeDirectoryPath,
+				Instances.DirectoryNames.Services);
+
+			return servicesDirectoryPath;
+		}
+
+		public string GetServiceDefinitionsDirectoryPath(string projectFilePath)
+		{
+			var servicesDirectoryPath = this.GetServicesDirectoryPath(projectFilePath);
+
+			var serviceDefinitionsDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+				servicesDirectoryPath,
+				Instances.DirectoryNames.Definitions);
+
+			return serviceDefinitionsDirectoryPath;
+		}
+
+		public string GetServiceDefinitionFilePath(
+			string projectFilePath,
+			string serviceDefinitionInterfaceTypeName)
+		{
+			var serviceDefinitionsDirectoryPath = this.GetServiceDefinitionsDirectoryPath(projectFilePath);
+
+			var codeFileName = F0053.CodeFileNameOperator.Instance.GetCSharpCodeFileName_ForTypeName(serviceDefinitionInterfaceTypeName);
+
+			var serviceDefinitionFilePath = Instances.PathOperator.GetFilePath(
+				serviceDefinitionsDirectoryPath,
+				codeFileName);
+
+			return serviceDefinitionFilePath;
+		}
+
+		public string GetServiceImplementationsDirectoryPath(string projectFilePath)
+		{
+			var servicesDirectoryPath = this.GetServicesDirectoryPath(projectFilePath);
+
+			var serviceImplementationsDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+				servicesDirectoryPath,
+				Instances.DirectoryNames.Implementations);
+
+			return serviceImplementationsDirectoryPath;
 		}
 
 		public string GetServicesConfigurerFilePath(string projectFilePath)
