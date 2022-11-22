@@ -1,5 +1,5 @@
 using System;
-
+using System.Runtime.CompilerServices;
 using R5T.T0132;
 
 
@@ -84,10 +84,10 @@ namespace R5T.F0052
 
 		public string GetPropertiesDirectoryPath(string projectFilePath)
 		{
-			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
+			var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 			
 			var propertiesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
-				codeDirectoryPath,
+				projectDirectoryPath,
 				Instances.DirectoryNames.Properties);
 
 			return propertiesDirectoryPath;
@@ -149,6 +149,32 @@ namespace R5T.F0052
 			return instancesFilePath;
 		}
 
+		public string GetStrongTypesDirectoryPath(string projectFilePath)
+		{
+            var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
+
+            var strongTypesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+                codeDirectoryPath,
+                Instances.DirectoryNames.StrongTypes);
+
+			return strongTypesDirectoryPath;
+        }
+
+		public string GetStrongTypeCodeFilePath(
+			string projectFilePath,
+			string strongTypeTypeName)
+		{
+			var strongTypesDirectoryPath = this.GetStrongTypesDirectoryPath(projectFilePath);
+
+			var strongTypeCodeFileName = F0053.CodeFileNameOperator.Instance.GetCSharpCodeFileName_ForTypeName(strongTypeTypeName);
+
+			var strongTypeCodeFilePath = Instances.PathOperator.GetFilePath(
+				strongTypesDirectoryPath,
+				strongTypeCodeFileName);
+
+			return strongTypeCodeFilePath;
+		}
+
 		public string GetWebApplicationBuilderConfigurerFilePath(string projectFilePath)
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
@@ -174,6 +200,21 @@ namespace R5T.F0052
 			var projectFilePath = F0002.Instances.PathOperator.GetFilePath(
 				projectDirectoryPath,
 				projectFileName);
+
+			return projectFilePath;
+		}
+
+		public string GetProjectFilePath_FromSolutionDirectoryPath(
+			string solutionDirectoryPath,
+			string projectName)
+		{
+			var projectDirectoryPath = this.GetProjectDirectoryPath_FromSolutionDirectoryPath(
+				solutionDirectoryPath,
+				projectName);
+
+			var projectFilePath = this.GetProjectFilePath(
+				projectDirectoryPath,
+				projectName);
 
 			return projectFilePath;
 		}

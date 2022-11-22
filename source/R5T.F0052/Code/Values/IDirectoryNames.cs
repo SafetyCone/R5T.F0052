@@ -13,5 +13,6 @@ namespace R5T.F0052
 		public string Implementations => "Implementations";
 		public string Properties => "Properties";
 		public string Services => "Services";
+		public string StrongTypes => "Strong Types";
 	}
 }
