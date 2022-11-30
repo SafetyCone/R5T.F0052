@@ -36,7 +36,40 @@ namespace R5T.F0052
 			return codeDirectoryPath;
 		}
 
-		public string GetDocumentationFilePath(string projectFilePath)
+        public string GetPagesDirectoryPath(string projectFilePath)
+        {
+            var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
+
+            var pagesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+                projectDirectoryPath,
+                Instances.DirectoryNames.Pages);
+
+            return pagesDirectoryPath;
+        }
+
+        public string GetSharedDirectoryPath(string projectFilePath)
+        {
+            var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
+
+            var sharedDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+                projectDirectoryPath,
+                Instances.DirectoryNames.Shared);
+
+            return sharedDirectoryPath;
+        }
+
+        public string GetComponentsDirectoryPath(string projectFilePath)
+        {
+            var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
+
+            var codeDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+                projectDirectoryPath,
+                Instances.DirectoryNames.Components);
+
+            return codeDirectoryPath;
+        }
+
+        public string GetDocumentationFilePath(string projectFilePath)
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
@@ -58,7 +91,66 @@ namespace R5T.F0052
 			return instancesFilePath;
 		}
 
-		public string GetLaunchSettingsJsonFilePath(string projectFilePath)
+        public string GetTailwindCssFilePath(string projectFilePath)
+        {
+            var sourceCssDirectoryPath = this.GetSourceCssDirectoryPath(projectFilePath);
+
+            var tailwindCssFilePath = Instances.PathOperator.GetFilePath(
+                sourceCssDirectoryPath,
+                Instances.FileNames.TailwindCss);
+
+            return tailwindCssFilePath;
+        }
+
+        public string GetIndexRazorFilePath(string projectFilePath)
+        {
+            var pagesDirectoryPath = this.GetPagesDirectoryPath(projectFilePath);
+
+            var mainLayoutRazorFilePath = Instances.PathOperator.GetFilePath(pagesDirectoryPath, Instances.FileNames.IndexRazor);
+            return mainLayoutRazorFilePath;
+        }
+
+        public string GetMainLayoutRazorFilePath(string projectFilePath)
+        {
+            var sharedDirectoryPath = this.GetSharedDirectoryPath(projectFilePath);
+
+            var mainLayoutRazorFilePath = Instances.PathOperator.GetFilePath(sharedDirectoryPath, Instances.FileNames.MainLayout);
+            return mainLayoutRazorFilePath;
+        }
+
+        public string GetMainImportsRazorFilePath(string projectFilePath)
+        {
+            var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
+
+            var instancesFilePath = Instances.PathOperator.GetFilePath(projectDirectoryPath, Instances.FileNames.Imports);
+            return instancesFilePath;
+        }
+
+        public string GetAppRazorFilePath(string projectFilePath)
+        {
+            var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
+
+            var instancesFilePath = Instances.PathOperator.GetFilePath(projectDirectoryPath, Instances.FileNames.AppRazor);
+            return instancesFilePath;
+        }
+
+        public string GetTailwindConfigJsFilePath(string projectFilePath)
+        {
+            var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
+
+            var instancesFilePath = Instances.PathOperator.GetFilePath(projectDirectoryPath, Instances.FileNames.TailwindConfigJs);
+            return instancesFilePath;
+        }
+
+        public string GetPackageJsonFilePath(string projectFilePath)
+        {
+            var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
+
+            var instancesFilePath = Instances.PathOperator.GetFilePath(projectDirectoryPath, Instances.FileNames.PackageJson);
+            return instancesFilePath;
+        }
+
+        public string GetLaunchSettingsJsonFilePath(string projectFilePath)
 		{
 			var propertiesDirectoryPath = this.GetPropertiesDirectoryPath(projectFilePath);
 
@@ -93,7 +185,31 @@ namespace R5T.F0052
 			return propertiesDirectoryPath;
 		}
 
-		public string GetServicesDirectoryPath(string projectFilePath)
+		public string GetSourceDirectoryPath(string projectFilePath)
+		{
+			var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
+
+			var sourceDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+				projectDirectoryPath,
+				Instances.DirectoryNames.Source);
+
+			return sourceDirectoryPath;
+		}
+
+        public string GetSourceCssDirectoryPath(string projectFilePath)
+        {
+            var sourceDirectoryPath = this.GetSourceDirectoryPath(projectFilePath);
+
+            var sourceCssDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+                sourceDirectoryPath,
+                Instances.DirectoryNames.Css);
+
+            return sourceDirectoryPath;
+        }
+
+        
+
+        public string GetServicesDirectoryPath(string projectFilePath)
         {
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
@@ -253,5 +369,27 @@ namespace R5T.F0052
 
 			return projectPlanFilePath;
 		}
+
+		public string GetWwwRootDirectoryPath(string projectFilePath)
+		{
+            var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
+
+            var wwwRootDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+                projectDirectoryPath,
+                Instances.DirectoryNames.WwwRoot);
+
+            return wwwRootDirectoryPath;
+        }
+
+		public string GetWwwRootIndexHtmlFilePath(string projectFilePath)
+		{
+			var wwwRootDirectoryPath = this.GetWwwRootDirectoryPath(projectFilePath);
+
+            var indexHtmlFilePath = Instances.PathOperator.GetFilePath(
+                wwwRootDirectoryPath,
+                Instances.FileNames.IndexHtml);
+
+            return indexHtmlFilePath;
+        }
 	}
 }
