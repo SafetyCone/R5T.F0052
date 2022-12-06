@@ -12,6 +12,8 @@ namespace R5T.F0052
 		public string AppSettingsJson => "appSettings.json";
 		public string AppSettingsDevelopmentJson => "appSettings.Development.json";
 		public string Documentation => "Documentation.cs";
+		public string ExampleComponentRazor => "ExampleComponent.razor";
+		public string RazorStaticComponentsHost => "_Host.cshtml";
 		public string Imports => "_Imports.razor";
 		/// <summary>
 		/// Lowercase "index.html" for the client-side.
@@ -30,8 +32,10 @@ namespace R5T.F0052
 		public string ProjectPlanTextFile => "Project Plan.txt";
 		public string ProjectPlanMarkdownFile => "Project Plan.md";
 		public string ServicesConfigurer => "ServicesConfigurer.cs";
-        public string TailwindConfigJs => "tailwind.config.cs";
-		public string TailwindCss => "tailwind.css";
+        public string TailwindAllContentPathsJson => "tailwind.contentpaths.all.json";
+        public string TailwindConfigJs => "tailwind.config.js";
+		public string TailwindContentPathsJson => "tailwind.contentpaths.json";
+        public string TailwindCss => "tailwind.css";
         public string WebApplicationBuilderConfigurer => "WebApplicationBuilderConfigurer.cs";
 		public string WebApplicationConfigurer => "WebApplicationConfigurer.cs";
 	}

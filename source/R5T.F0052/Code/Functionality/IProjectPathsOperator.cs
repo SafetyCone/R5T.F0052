@@ -102,6 +102,36 @@ namespace R5T.F0052
             return tailwindCssFilePath;
         }
 
+        public string GetTailwindContentPathsJsonFilePath(string projectFilePath)
+        {
+            var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
+
+            var tailwindContentPathsJsonFilePath = Instances.PathOperator.GetFilePath(
+                projectDirectoryPath,
+                Instances.FileNames.TailwindContentPathsJson);
+
+            return tailwindContentPathsJsonFilePath;
+        }
+
+        public string GetTailwindAllContentPathsJsonFilePath(string projectFilePath)
+        {
+            var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
+
+            var tailwindAllContentPathsJsonFilePath = Instances.PathOperator.GetFilePath(
+                projectDirectoryPath,
+                Instances.FileNames.TailwindAllContentPathsJson);
+
+            return tailwindAllContentPathsJsonFilePath;
+        }
+
+        public string GetExampleComponentRazorFilePath(string projectFilePath)
+        {
+            var componentsDirectoryPath = this.GetComponentsDirectoryPath(projectFilePath);
+
+            var exampleComponentRazorFilePath = Instances.PathOperator.GetFilePath(componentsDirectoryPath, Instances.FileNames.ExampleComponentRazor);
+            return exampleComponentRazorFilePath;
+        }
+
         public string GetIndexRazorFilePath(string projectFilePath)
         {
             var pagesDirectoryPath = this.GetPagesDirectoryPath(projectFilePath);
@@ -134,6 +164,14 @@ namespace R5T.F0052
             return instancesFilePath;
         }
 
+        public string GetAppRazorFilePath_InComponents(string projectFilePath)
+        {
+            var componentsDirectoryPath = this.GetComponentsDirectoryPath(projectFilePath);
+
+            var instancesFilePath = Instances.PathOperator.GetFilePath(componentsDirectoryPath, Instances.FileNames.AppRazor);
+            return instancesFilePath;
+        }
+
         public string GetTailwindConfigJsFilePath(string projectFilePath)
         {
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
@@ -158,7 +196,15 @@ namespace R5T.F0052
 			return instancesFilePath;
 		}
 
-		public string GetProgramFilePath(string projectFilePath)
+        public string GetStaticRazorComponentsHostFilePath(string projectFilePath)
+        {
+            var pagesDirectoryPath = this.GetPagesDirectoryPath(projectFilePath);
+
+            var instancesFilePath = Instances.PathOperator.GetFilePath(pagesDirectoryPath, Instances.FileNames.RazorStaticComponentsHost);
+            return instancesFilePath;
+        }
+
+        public string GetProgramFilePath(string projectFilePath)
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
@@ -204,10 +250,8 @@ namespace R5T.F0052
                 sourceDirectoryPath,
                 Instances.DirectoryNames.Css);
 
-            return sourceDirectoryPath;
+            return sourceCssDirectoryPath;
         }
-
-        
 
         public string GetServicesDirectoryPath(string projectFilePath)
         {
