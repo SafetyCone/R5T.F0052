@@ -36,6 +36,119 @@ namespace R5T.F0052
 			return codeDirectoryPath;
 		}
 
+		public string GetFormsDirectoryPath(string projectFilePath)
+		{
+			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
+
+			var formsDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+				codeDirectoryPath,
+				Instances.DirectoryNames.Forms);
+
+			return formsDirectoryPath;
+		}
+
+		public string GetFormsDirectoryFilePath(
+			string projectFilePath,
+			string fileName)
+		{
+			var formsDirectoryPath = this.GetFormsDirectoryPath(projectFilePath);
+
+			var filePath = Instances.PathOperator.GetFilePath(
+				formsDirectoryPath,
+				fileName);
+
+			return filePath;
+		}
+
+		public string GetTypesDirectoryPath(string projectFilePath)
+		{
+			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
+
+			var typesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+				codeDirectoryPath,
+				Instances.DirectoryNames.Types);
+
+			return typesDirectoryPath;
+		}
+
+        public string GetClassesDirectoryPath(string projectFilePath)
+        {
+            var typesDirectoryPath = this.GetTypesDirectoryPath(projectFilePath);
+
+            var classesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+                typesDirectoryPath,
+                Instances.DirectoryNames.Classes);
+
+            return classesDirectoryPath;
+        }
+
+		public string GetComponentMarkupFilePath(string projectFilePath,
+			string componentName)
+		{
+			var componentsDirectoryPath = this.GetComponentsDirectoryPath(projectFilePath);
+
+			var componentMarkupFileName = $"{componentName}.razor";
+
+			var componentMarkupFilePath = Instances.PathOperator.GetFilePath(
+				componentsDirectoryPath,
+				componentMarkupFileName);
+
+			return componentMarkupFilePath;
+		}
+
+        public string GetComponentCodeBehindFilePath(string projectFilePath,
+            string componentName)
+        {
+            var componentsDirectoryPath = this.GetComponentsDirectoryPath(projectFilePath);
+
+            var componentCodeBehindFileName = $"{componentName}.razor.cs";
+
+            var componentCodeBehindFilePath = Instances.PathOperator.GetFilePath(
+                componentsDirectoryPath,
+                componentCodeBehindFileName);
+
+            return componentCodeBehindFilePath;
+        }
+
+        public string GetClassCodeFilePath(string projectFilePath,
+			string className)
+		{
+			var classesDirectoryPath = this.GetClassesDirectoryPath(projectFilePath);
+
+            var classFileName = F0053.CodeFileNameOperator.Instance.GetCSharpCodeFileName_ForTypeName(className);
+
+			var classFilePath = Instances.PathOperator.GetFilePath(
+				classesDirectoryPath,
+				classFileName);
+
+			return classFilePath;
+        }
+
+        public string GetInterfaceCodeFilePath(string projectFilePath,
+            string interfaceName)
+        {
+            var interfacesDirectoryPath = this.GetInterfacesDirectoryPath(projectFilePath);
+
+            var interfaceFileName = F0053.CodeFileNameOperator.Instance.GetCSharpCodeFileName_ForTypeName(interfaceName);
+
+            var interfaceFilePath = Instances.PathOperator.GetFilePath(
+                interfacesDirectoryPath,
+                interfaceFileName);
+
+            return interfaceFilePath;
+        }
+
+        public string GetInterfacesDirectoryPath(string projectFilePath)
+        {
+            var typesDirectoryPath = this.GetTypesDirectoryPath(projectFilePath);
+
+			var interfacesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+				typesDirectoryPath,
+				Instances.DirectoryNames.Interfaces);
+
+            return interfacesDirectoryPath;
+        }
+
         public string GetPagesDirectoryPath(string projectFilePath)
         {
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
