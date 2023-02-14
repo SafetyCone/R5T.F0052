@@ -17,6 +17,7 @@ namespace R5T.F0052
 		public string Css => "css";
 		public string Definitions => "Definitions";
 		public string Forms => "Forms";
+		public string Framework => "_framework";
 		public string Implementations => "Implementations";
 		public string Interfaces => "Interfaces";
 		public string Pages => "Pages";
