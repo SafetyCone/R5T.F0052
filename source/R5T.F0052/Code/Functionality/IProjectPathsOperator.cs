@@ -464,6 +464,17 @@ namespace R5T.F0052
 			return instancesFilePath;
 		}
 
+		public string Get_PlaceholderHtmlFilePath(string projectFilePath)
+		{
+			var wwwRootDirectoryPath = this.GetWwwRootDirectoryPath(projectFilePath);
+
+			var output = Instances.PathOperator.GetFilePath(
+				wwwRootDirectoryPath,
+				Instances.FileNames.PlaceholderHtml);
+
+			return output;
+		}
+
 		public string GetProjectFilePath(
 			string projectDirectoryPath,
 			string projectName)

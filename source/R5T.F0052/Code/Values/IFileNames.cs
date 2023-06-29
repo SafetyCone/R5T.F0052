@@ -27,6 +27,7 @@ namespace R5T.F0052
 		/// NPM package.json file.
 		/// </summary>
         public string PackageJson => "package.json";
+		public string PlaceholderHtml => "Placeholder.html";
         public string Program => "Program.cs";
 		public string ProgramEntryPoint => "Program-Entry Point.cs";
 		public string ProjectPlanTextFile => "Project Plan.txt";
