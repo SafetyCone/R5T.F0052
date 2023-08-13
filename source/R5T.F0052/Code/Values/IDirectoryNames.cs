@@ -20,7 +20,8 @@ namespace R5T.F0052
 		public string Framework => "_framework";
 		public string Implementations => "Implementations";
 		public string Interfaces => "Interfaces";
-		public string Pages => "Pages";
+        public string Layouts => "Layouts";
+        public string Pages => "Pages";
 		public string Properties => "Properties";
 		public string Services => "Services";
 		public string Shared => "Shared";

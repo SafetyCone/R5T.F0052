@@ -182,6 +182,17 @@ namespace R5T.F0052
             return codeDirectoryPath;
         }
 
+        public string Get_ComponentsLayoutsDirectoryPath(string projectFilePath)
+        {
+            var componentsDirectoryPath = this.GetComponentsDirectoryPath(projectFilePath);
+
+            var layoutsDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+                componentsDirectoryPath,
+                Instances.DirectoryNames.Layouts);
+
+            return layoutsDirectoryPath;
+        }
+
         public string GetDocumentationFilePath(string projectFilePath)
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
@@ -261,11 +272,54 @@ namespace R5T.F0052
             return mainLayoutRazorFilePath;
         }
 
+        public string Get_ComponentsLayoutsLayoutRazorFilePath(string projectFilePath)
+        {
+            var directoryPath = this.Get_ComponentsLayoutsDirectoryPath(projectFilePath);
+
+            var mainLayoutRazorFilePath = Instances.PathOperator.GetFilePath(directoryPath, Instances.FileNames.Layout);
+            return mainLayoutRazorFilePath;
+        }
+
+        public string Get_ComponentsLayoutsLayoutCodeFilePath(string projectFilePath)
+        {
+            var directoryPath = this.Get_ComponentsLayoutsDirectoryPath(projectFilePath);
+
+			var razorFileName = Instances.FileNames.Layout;
+			var razorCodeFileName =  Instances.CodeFileNameOperator.Append_CSharpFileExtension(razorFileName);
+
+            var mainLayoutRazorFilePath = Instances.PathOperator.GetFilePath(directoryPath, razorCodeFileName);
+            return mainLayoutRazorFilePath;
+        }
+
         public string GetMainImportsRazorFilePath(string projectFilePath)
         {
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
             var instancesFilePath = Instances.PathOperator.GetFilePath(projectDirectoryPath, Instances.FileNames.Imports);
+            return instancesFilePath;
+        }
+
+        public string Get_PagesImportsRazorFilePath(string projectFilePath)
+        {
+            var pagesDirectoryPath = this.GetPagesDirectoryPath(projectFilePath);
+
+            var instancesFilePath = Instances.PathOperator.GetFilePath(pagesDirectoryPath, Instances.FileNames.Imports);
+            return instancesFilePath;
+        }
+
+        public string Get_ComponentsImportsRazorFilePath(string projectFilePath)
+        {
+            var componentsDirectoryPath = this.GetComponentsDirectoryPath(projectFilePath);
+
+            var instancesFilePath = Instances.PathOperator.GetFilePath(componentsDirectoryPath, Instances.FileNames.Imports);
+            return instancesFilePath;
+        }
+
+        public string Get_ComponentsLayoutsImportsRazorFilePath(string projectFilePath)
+        {
+            var componentsLayoutsDirectoryPath = this.Get_ComponentsLayoutsDirectoryPath(projectFilePath);
+
+            var instancesFilePath = Instances.PathOperator.GetFilePath(componentsLayoutsDirectoryPath, Instances.FileNames.Imports);
             return instancesFilePath;
         }
 

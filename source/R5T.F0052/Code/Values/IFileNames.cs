@@ -22,7 +22,8 @@ namespace R5T.F0052
 		public string IndexRazor => "Index.razor";
 		public string Instances => "Instances.cs";
 		public string LaunchSettingsJson => "launchSettings.json";
-		public string MainLayout => "MainLayout.razor";
+        public string Layout => "Layout.razor";
+        public string MainLayout => "MainLayout.razor";
 		/// <summary>
 		/// NPM package.json file.
 		/// </summary>

@@ -5,6 +5,7 @@ namespace R5T.F0052
 {
     public static class Instances
     {
+        public static F0053.ICodeFileNameOperator CodeFileNameOperator => F0053.CodeFileNameOperator.Instance;
         public static IDirectoryNames DirectoryNames { get; } = F0052.DirectoryNames.Instance;
         public static IFileExtensions FileExtensions { get; } = F0052.FileExtensions.Instance;
         public static F0000.IFileExtensionOperator FileExtensionOperator { get; } = F0000.FileExtensionOperator.Instance;
