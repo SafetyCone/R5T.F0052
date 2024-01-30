@@ -16,7 +16,7 @@ namespace R5T.F0052
 		public bool IsProjectFilePath(
 			string possibleProjectFilePath)
 		{
-			var isProjectFilePath = Instances.PathOperator.HasFileExtension(
+			var isProjectFilePath = Instances.PathOperator.Has_FileExtension(
 				possibleProjectFilePath,
 				Instances.FileExtensions.CSharpProjectFile);
 

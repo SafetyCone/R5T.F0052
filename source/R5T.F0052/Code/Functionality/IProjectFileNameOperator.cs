@@ -20,7 +20,7 @@ namespace R5T.F0052
 			var projectFileNameStem = this.GetProjectFileNameStem_FromProjectName(projectName);
 			var projectFileExtension = Instances.FileExtensions.CSharpProjectFile;
 
-			var output = Instances.FileExtensionOperator.GetFileName(projectFileNameStem, projectFileExtension);
+			var output = Instances.FileExtensionOperator.Get_FileName(projectFileNameStem, projectFileExtension);
 			return output;
 		}
 	}

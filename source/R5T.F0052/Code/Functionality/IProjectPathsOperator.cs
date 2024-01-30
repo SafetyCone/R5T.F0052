@@ -13,7 +13,7 @@ namespace R5T.F0052
 		{
 			var propertiesDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-			var instancesFilePath = Instances.PathOperator.GetFilePath(propertiesDirectoryPath, Instances.FileNames.AppSettingsJson);
+			var instancesFilePath = Instances.PathOperator.Get_FilePath(propertiesDirectoryPath, Instances.FileNames.AppSettingsJson);
 			return instancesFilePath;
 		}
 
@@ -21,7 +21,7 @@ namespace R5T.F0052
 		{
 			var propertiesDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-			var instancesFilePath = Instances.PathOperator.GetFilePath(propertiesDirectoryPath, Instances.FileNames.AppSettingsDevelopmentJson);
+			var instancesFilePath = Instances.PathOperator.Get_FilePath(propertiesDirectoryPath, Instances.FileNames.AppSettingsDevelopmentJson);
 			return instancesFilePath;
 		}
 
@@ -29,7 +29,7 @@ namespace R5T.F0052
 		{
 			var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-			var codeDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+			var codeDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				projectDirectoryPath,
 				Instances.DirectoryNames.Code);
 
@@ -40,7 +40,7 @@ namespace R5T.F0052
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
-			var formsDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+			var formsDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				codeDirectoryPath,
 				Instances.DirectoryNames.Forms);
 
@@ -53,7 +53,7 @@ namespace R5T.F0052
 		{
 			var formsDirectoryPath = this.GetFormsDirectoryPath(projectFilePath);
 
-			var filePath = Instances.PathOperator.GetFilePath(
+			var filePath = Instances.PathOperator.Get_FilePath(
 				formsDirectoryPath,
 				fileName);
 
@@ -64,7 +64,7 @@ namespace R5T.F0052
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
-			var typesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+			var typesDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				codeDirectoryPath,
 				Instances.DirectoryNames.Types);
 
@@ -75,7 +75,7 @@ namespace R5T.F0052
         {
             var typesDirectoryPath = this.GetTypesDirectoryPath(projectFilePath);
 
-            var classesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+            var classesDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
                 typesDirectoryPath,
                 Instances.DirectoryNames.Classes);
 
@@ -89,7 +89,7 @@ namespace R5T.F0052
 
 			var componentMarkupFileName = $"{componentName}.razor";
 
-			var componentMarkupFilePath = Instances.PathOperator.GetFilePath(
+			var componentMarkupFilePath = Instances.PathOperator.Get_FilePath(
 				componentsDirectoryPath,
 				componentMarkupFileName);
 
@@ -103,7 +103,7 @@ namespace R5T.F0052
 
             var componentCodeBehindFileName = $"{componentName}.razor.cs";
 
-            var componentCodeBehindFilePath = Instances.PathOperator.GetFilePath(
+            var componentCodeBehindFilePath = Instances.PathOperator.Get_FilePath(
                 componentsDirectoryPath,
                 componentCodeBehindFileName);
 
@@ -117,7 +117,7 @@ namespace R5T.F0052
 
             var classFileName = F0053.CodeFileNameOperator.Instance.GetCSharpCodeFileName_ForTypeName(className);
 
-			var classFilePath = Instances.PathOperator.GetFilePath(
+			var classFilePath = Instances.PathOperator.Get_FilePath(
 				classesDirectoryPath,
 				classFileName);
 
@@ -131,7 +131,7 @@ namespace R5T.F0052
 
             var interfaceFileName = F0053.CodeFileNameOperator.Instance.GetCSharpCodeFileName_ForTypeName(interfaceName);
 
-            var interfaceFilePath = Instances.PathOperator.GetFilePath(
+            var interfaceFilePath = Instances.PathOperator.Get_FilePath(
                 interfacesDirectoryPath,
                 interfaceFileName);
 
@@ -142,7 +142,7 @@ namespace R5T.F0052
         {
             var typesDirectoryPath = this.GetTypesDirectoryPath(projectFilePath);
 
-			var interfacesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+			var interfacesDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				typesDirectoryPath,
 				Instances.DirectoryNames.Interfaces);
 
@@ -153,7 +153,7 @@ namespace R5T.F0052
         {
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-            var pagesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+            var pagesDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
                 projectDirectoryPath,
                 Instances.DirectoryNames.Pages);
 
@@ -164,7 +164,7 @@ namespace R5T.F0052
         {
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-            var sharedDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+            var sharedDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
                 projectDirectoryPath,
                 Instances.DirectoryNames.Shared);
 
@@ -175,7 +175,7 @@ namespace R5T.F0052
         {
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-            var codeDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+            var codeDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
                 projectDirectoryPath,
                 Instances.DirectoryNames.Components);
 
@@ -186,7 +186,7 @@ namespace R5T.F0052
         {
             var componentsDirectoryPath = this.GetComponentsDirectoryPath(projectFilePath);
 
-            var layoutsDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+            var layoutsDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
                 componentsDirectoryPath,
                 Instances.DirectoryNames.Layouts);
 
@@ -197,7 +197,7 @@ namespace R5T.F0052
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
-			var documentationFilePath = Instances.PathOperator.GetFilePath(
+			var documentationFilePath = Instances.PathOperator.Get_FilePath(
 				codeDirectoryPath,
 				Instances.FileNames.Documentation);
 
@@ -208,7 +208,7 @@ namespace R5T.F0052
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
-			var instancesFilePath = Instances.PathOperator.GetFilePath(
+			var instancesFilePath = Instances.PathOperator.Get_FilePath(
 				codeDirectoryPath,
 				Instances.FileNames.Instances);
 
@@ -219,7 +219,7 @@ namespace R5T.F0052
         {
             var sourceCssDirectoryPath = this.GetSourceCssDirectoryPath(projectFilePath);
 
-            var tailwindCssFilePath = Instances.PathOperator.GetFilePath(
+            var tailwindCssFilePath = Instances.PathOperator.Get_FilePath(
                 sourceCssDirectoryPath,
                 Instances.FileNames.TailwindCss);
 
@@ -230,7 +230,7 @@ namespace R5T.F0052
         {
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-            var tailwindContentPathsJsonFilePath = Instances.PathOperator.GetFilePath(
+            var tailwindContentPathsJsonFilePath = Instances.PathOperator.Get_FilePath(
                 projectDirectoryPath,
                 Instances.FileNames.TailwindContentPathsJson);
 
@@ -241,7 +241,7 @@ namespace R5T.F0052
         {
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-            var tailwindAllContentPathsJsonFilePath = Instances.PathOperator.GetFilePath(
+            var tailwindAllContentPathsJsonFilePath = Instances.PathOperator.Get_FilePath(
                 projectDirectoryPath,
                 Instances.FileNames.TailwindAllContentPathsJson);
 
@@ -252,7 +252,7 @@ namespace R5T.F0052
         {
             var componentsDirectoryPath = this.GetComponentsDirectoryPath(projectFilePath);
 
-            var exampleComponentRazorFilePath = Instances.PathOperator.GetFilePath(componentsDirectoryPath, Instances.FileNames.ExampleComponentRazor);
+            var exampleComponentRazorFilePath = Instances.PathOperator.Get_FilePath(componentsDirectoryPath, Instances.FileNames.ExampleComponentRazor);
             return exampleComponentRazorFilePath;
         }
 
@@ -260,7 +260,7 @@ namespace R5T.F0052
         {
             var pagesDirectoryPath = this.GetPagesDirectoryPath(projectFilePath);
 
-            var mainLayoutRazorFilePath = Instances.PathOperator.GetFilePath(pagesDirectoryPath, Instances.FileNames.IndexRazor);
+            var mainLayoutRazorFilePath = Instances.PathOperator.Get_FilePath(pagesDirectoryPath, Instances.FileNames.IndexRazor);
             return mainLayoutRazorFilePath;
         }
 
@@ -268,7 +268,7 @@ namespace R5T.F0052
         {
             var sharedDirectoryPath = this.GetSharedDirectoryPath(projectFilePath);
 
-            var mainLayoutRazorFilePath = Instances.PathOperator.GetFilePath(sharedDirectoryPath, Instances.FileNames.MainLayout);
+            var mainLayoutRazorFilePath = Instances.PathOperator.Get_FilePath(sharedDirectoryPath, Instances.FileNames.MainLayout);
             return mainLayoutRazorFilePath;
         }
 
@@ -276,7 +276,7 @@ namespace R5T.F0052
         {
             var directoryPath = this.Get_ComponentsLayoutsDirectoryPath(projectFilePath);
 
-            var mainLayoutRazorFilePath = Instances.PathOperator.GetFilePath(directoryPath, Instances.FileNames.Layout);
+            var mainLayoutRazorFilePath = Instances.PathOperator.Get_FilePath(directoryPath, Instances.FileNames.Layout);
             return mainLayoutRazorFilePath;
         }
 
@@ -287,7 +287,7 @@ namespace R5T.F0052
 			var razorFileName = Instances.FileNames.Layout;
 			var razorCodeFileName =  Instances.CodeFileNameOperator.Append_CSharpFileExtension(razorFileName);
 
-            var mainLayoutRazorFilePath = Instances.PathOperator.GetFilePath(directoryPath, razorCodeFileName);
+            var mainLayoutRazorFilePath = Instances.PathOperator.Get_FilePath(directoryPath, razorCodeFileName);
             return mainLayoutRazorFilePath;
         }
 
@@ -295,7 +295,7 @@ namespace R5T.F0052
         {
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-            var instancesFilePath = Instances.PathOperator.GetFilePath(projectDirectoryPath, Instances.FileNames.Imports);
+            var instancesFilePath = Instances.PathOperator.Get_FilePath(projectDirectoryPath, Instances.FileNames.Imports);
             return instancesFilePath;
         }
 
@@ -303,7 +303,7 @@ namespace R5T.F0052
         {
             var pagesDirectoryPath = this.GetPagesDirectoryPath(projectFilePath);
 
-            var instancesFilePath = Instances.PathOperator.GetFilePath(pagesDirectoryPath, Instances.FileNames.Imports);
+            var instancesFilePath = Instances.PathOperator.Get_FilePath(pagesDirectoryPath, Instances.FileNames.Imports);
             return instancesFilePath;
         }
 
@@ -311,7 +311,7 @@ namespace R5T.F0052
         {
             var componentsDirectoryPath = this.GetComponentsDirectoryPath(projectFilePath);
 
-            var instancesFilePath = Instances.PathOperator.GetFilePath(componentsDirectoryPath, Instances.FileNames.Imports);
+            var instancesFilePath = Instances.PathOperator.Get_FilePath(componentsDirectoryPath, Instances.FileNames.Imports);
             return instancesFilePath;
         }
 
@@ -319,7 +319,7 @@ namespace R5T.F0052
         {
             var componentsLayoutsDirectoryPath = this.Get_ComponentsLayoutsDirectoryPath(projectFilePath);
 
-            var instancesFilePath = Instances.PathOperator.GetFilePath(componentsLayoutsDirectoryPath, Instances.FileNames.Imports);
+            var instancesFilePath = Instances.PathOperator.Get_FilePath(componentsLayoutsDirectoryPath, Instances.FileNames.Imports);
             return instancesFilePath;
         }
 
@@ -327,7 +327,7 @@ namespace R5T.F0052
         {
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-            var instancesFilePath = Instances.PathOperator.GetFilePath(projectDirectoryPath, Instances.FileNames.AppRazor);
+            var instancesFilePath = Instances.PathOperator.Get_FilePath(projectDirectoryPath, Instances.FileNames.AppRazor);
             return instancesFilePath;
         }
 
@@ -335,7 +335,7 @@ namespace R5T.F0052
         {
             var componentsDirectoryPath = this.GetComponentsDirectoryPath(projectFilePath);
 
-            var instancesFilePath = Instances.PathOperator.GetFilePath(componentsDirectoryPath, Instances.FileNames.AppRazor);
+            var instancesFilePath = Instances.PathOperator.Get_FilePath(componentsDirectoryPath, Instances.FileNames.AppRazor);
             return instancesFilePath;
         }
 
@@ -343,7 +343,7 @@ namespace R5T.F0052
         {
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-            var instancesFilePath = Instances.PathOperator.GetFilePath(projectDirectoryPath, Instances.FileNames.TailwindConfigJs);
+            var instancesFilePath = Instances.PathOperator.Get_FilePath(projectDirectoryPath, Instances.FileNames.TailwindConfigJs);
             return instancesFilePath;
         }
 
@@ -351,7 +351,7 @@ namespace R5T.F0052
         {
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-            var instancesFilePath = Instances.PathOperator.GetFilePath(projectDirectoryPath, Instances.FileNames.PackageJson);
+            var instancesFilePath = Instances.PathOperator.Get_FilePath(projectDirectoryPath, Instances.FileNames.PackageJson);
             return instancesFilePath;
         }
 
@@ -359,7 +359,7 @@ namespace R5T.F0052
 		{
 			var propertiesDirectoryPath = this.GetPropertiesDirectoryPath(projectFilePath);
 
-			var instancesFilePath = Instances.PathOperator.GetFilePath(propertiesDirectoryPath, Instances.FileNames.LaunchSettingsJson);
+			var instancesFilePath = Instances.PathOperator.Get_FilePath(propertiesDirectoryPath, Instances.FileNames.LaunchSettingsJson);
 			return instancesFilePath;
 		}
 
@@ -367,7 +367,7 @@ namespace R5T.F0052
         {
             var pagesDirectoryPath = this.GetPagesDirectoryPath(projectFilePath);
 
-            var instancesFilePath = Instances.PathOperator.GetFilePath(pagesDirectoryPath, Instances.FileNames.RazorStaticComponentsHost);
+            var instancesFilePath = Instances.PathOperator.Get_FilePath(pagesDirectoryPath, Instances.FileNames.RazorStaticComponentsHost);
             return instancesFilePath;
         }
 
@@ -375,7 +375,7 @@ namespace R5T.F0052
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
-			var instancesFilePath = Instances.PathOperator.GetFilePath(codeDirectoryPath, Instances.FileNames.Program);
+			var instancesFilePath = Instances.PathOperator.Get_FilePath(codeDirectoryPath, Instances.FileNames.Program);
 			return instancesFilePath;
 		}
 
@@ -383,7 +383,7 @@ namespace R5T.F0052
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
-			var instancesFilePath = Instances.PathOperator.GetFilePath(codeDirectoryPath, Instances.FileNames.ProgramEntryPoint);
+			var instancesFilePath = Instances.PathOperator.Get_FilePath(codeDirectoryPath, Instances.FileNames.ProgramEntryPoint);
 			return instancesFilePath;
 		}
 
@@ -391,7 +391,7 @@ namespace R5T.F0052
 		{
 			var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 			
-			var propertiesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+			var propertiesDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				projectDirectoryPath,
 				Instances.DirectoryNames.Properties);
 
@@ -402,7 +402,7 @@ namespace R5T.F0052
 		{
 			var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-			var sourceDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+			var sourceDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				projectDirectoryPath,
 				Instances.DirectoryNames.Source);
 
@@ -413,7 +413,7 @@ namespace R5T.F0052
         {
             var sourceDirectoryPath = this.GetSourceDirectoryPath(projectFilePath);
 
-            var sourceCssDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+            var sourceCssDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
                 sourceDirectoryPath,
                 Instances.DirectoryNames.Css);
 
@@ -424,7 +424,7 @@ namespace R5T.F0052
         {
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
-			var servicesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+			var servicesDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				codeDirectoryPath,
 				Instances.DirectoryNames.Services);
 
@@ -435,7 +435,7 @@ namespace R5T.F0052
 		{
 			var servicesDirectoryPath = this.GetServicesDirectoryPath(projectFilePath);
 
-			var serviceDefinitionsDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+			var serviceDefinitionsDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				servicesDirectoryPath,
 				Instances.DirectoryNames.Definitions);
 
@@ -450,7 +450,7 @@ namespace R5T.F0052
 
 			var codeFileName = F0053.CodeFileNameOperator.Instance.GetCSharpCodeFileName_ForTypeName(serviceDefinitionInterfaceTypeName);
 
-			var serviceDefinitionFilePath = Instances.PathOperator.GetFilePath(
+			var serviceDefinitionFilePath = Instances.PathOperator.Get_FilePath(
 				serviceDefinitionsDirectoryPath,
 				codeFileName);
 
@@ -461,7 +461,7 @@ namespace R5T.F0052
 		{
 			var servicesDirectoryPath = this.GetServicesDirectoryPath(projectFilePath);
 
-			var serviceImplementationsDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+			var serviceImplementationsDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				servicesDirectoryPath,
 				Instances.DirectoryNames.Implementations);
 
@@ -472,7 +472,7 @@ namespace R5T.F0052
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
-			var instancesFilePath = Instances.PathOperator.GetFilePath(codeDirectoryPath, Instances.FileNames.ServicesConfigurer);
+			var instancesFilePath = Instances.PathOperator.Get_FilePath(codeDirectoryPath, Instances.FileNames.ServicesConfigurer);
 			return instancesFilePath;
 		}
 
@@ -480,7 +480,7 @@ namespace R5T.F0052
 		{
             var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
-            var strongTypesDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+            var strongTypesDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
                 codeDirectoryPath,
                 Instances.DirectoryNames.StrongTypes);
 
@@ -495,7 +495,7 @@ namespace R5T.F0052
 
 			var strongTypeCodeFileName = F0053.CodeFileNameOperator.Instance.GetCSharpCodeFileName_ForTypeName(strongTypeTypeName);
 
-			var strongTypeCodeFilePath = Instances.PathOperator.GetFilePath(
+			var strongTypeCodeFilePath = Instances.PathOperator.Get_FilePath(
 				strongTypesDirectoryPath,
 				strongTypeCodeFileName);
 
@@ -506,7 +506,7 @@ namespace R5T.F0052
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
-			var instancesFilePath = Instances.PathOperator.GetFilePath(codeDirectoryPath, Instances.FileNames.WebApplicationBuilderConfigurer);
+			var instancesFilePath = Instances.PathOperator.Get_FilePath(codeDirectoryPath, Instances.FileNames.WebApplicationBuilderConfigurer);
 			return instancesFilePath;
 		}
 
@@ -514,7 +514,7 @@ namespace R5T.F0052
 		{
 			var codeDirectoryPath = this.GetCodeDirectoryPath(projectFilePath);
 
-			var instancesFilePath = Instances.PathOperator.GetFilePath(codeDirectoryPath, Instances.FileNames.WebApplicationConfigurer);
+			var instancesFilePath = Instances.PathOperator.Get_FilePath(codeDirectoryPath, Instances.FileNames.WebApplicationConfigurer);
 			return instancesFilePath;
 		}
 
@@ -522,7 +522,7 @@ namespace R5T.F0052
 		{
 			var wwwRootDirectoryPath = this.GetWwwRootDirectoryPath(projectFilePath);
 
-			var output = Instances.PathOperator.GetFilePath(
+			var output = Instances.PathOperator.Get_FilePath(
 				wwwRootDirectoryPath,
 				Instances.FileNames.PlaceholderHtml);
 
@@ -535,7 +535,7 @@ namespace R5T.F0052
 		{
 			var projectFileName = Instances.ProjectFileNameOperator.GetProjectFileName_FromProjectName(projectName);
 
-			var projectFilePath = F0002.Instances.PathOperator.GetFilePath(
+			var projectFilePath = F0002.Instances.PathOperator.Get_FilePath(
 				projectDirectoryPath,
 				projectFileName);
 
@@ -563,7 +563,7 @@ namespace R5T.F0052
 		{
 			var projectDirectoryName = Instances.ProjectDirectoryNameOperator.GetProjectDirectoryName_FromProjectName(projectName);
 
-			var projectDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+			var projectDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				solutionDirectoryPath,
 				projectDirectoryName);
 
@@ -574,7 +574,7 @@ namespace R5T.F0052
 		{
 			var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-			var projectPlanFilePath = Instances.PathOperator.GetFilePath(
+			var projectPlanFilePath = Instances.PathOperator.Get_FilePath(
 				projectDirectoryPath,
 				Instances.FileNames.ProjectPlanTextFile);
 
@@ -585,7 +585,7 @@ namespace R5T.F0052
 		{
 			var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-			var projectPlanFilePath = Instances.PathOperator.GetFilePath(
+			var projectPlanFilePath = Instances.PathOperator.Get_FilePath(
 				projectDirectoryPath,
 				Instances.FileNames.ProjectPlanMarkdownFile);
 
@@ -596,7 +596,7 @@ namespace R5T.F0052
 		{
             var projectDirectoryPath = this.GetProjectDirectoryPath(projectFilePath);
 
-            var wwwRootDirectoryPath = Instances.PathOperator.GetDirectoryPath(
+            var wwwRootDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
                 projectDirectoryPath,
                 Instances.DirectoryNames.WwwRoot);
 
@@ -607,7 +607,7 @@ namespace R5T.F0052
 		{
 			var wwwRootDirectoryPath = this.GetWwwRootDirectoryPath(projectFilePath);
 
-            var indexHtmlFilePath = Instances.PathOperator.GetFilePath(
+            var indexHtmlFilePath = Instances.PathOperator.Get_FilePath(
                 wwwRootDirectoryPath,
                 Instances.FileNames.IndexHtml);
 
