@@ -529,19 +529,6 @@ namespace R5T.F0052
 			return output;
 		}
 
-		public string Get_ProjectFilePath(
-			string projectDirectoryPath,
-			string projectName)
-		{
-			var projectFileName = Instances.ProjectFileNameOperator.Get_ProjectFileName_FromProjectName(projectName);
-
-			var projectFilePath = Instances.PathOperator.Get_FilePath(
-				projectDirectoryPath,
-				projectFileName);
-
-			return projectFilePath;
-		}
-
 		public string Get_ProjectFilePath_FromSolutionDirectoryPath(
 			string solutionDirectoryPath,
 			string projectName)
