@@ -404,7 +404,7 @@ namespace R5T.F0052
 
 			var sourceDirectoryPath = Instances.PathOperator.Get_DirectoryPath(
 				projectDirectoryPath,
-				Instances.DirectoryNames.Source);
+				Instances.DirectoryNames.FrontEnd_Source_DirectoryName);
 
 			return sourceDirectoryPath;
 		}

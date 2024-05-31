@@ -7,7 +7,7 @@ namespace R5T.F0052
     {
         public static F0053.ICodeFileNameOperator CodeFileNameOperator => F0053.CodeFileNameOperator.Instance;
         public static IDirectoryNames DirectoryNames { get; } = F0052.DirectoryNames.Instance;
-        public static IFileExtensions FileExtensions { get; } = F0052.FileExtensions.Instance;
+        public static Z0072.Z002.IFileExtensions FileExtensions { get; } = Z0072.Z002.FileExtensions.Instance;
         public static L0066.IFileExtensionOperator FileExtensionOperator { get; } = L0066.FileExtensionOperator.Instance;
         public static IFileNames FileNames { get; } = F0052.FileNames.Instance;
         public static L0066.IPathOperator PathOperator { get; } = L0066.PathOperator.Instance;
